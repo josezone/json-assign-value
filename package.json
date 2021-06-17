@@ -1,0 +1,41 @@
+{
+  "author": "josezone",
+  "name": "json-assign-value",
+  "version": "0.0.1",
+  "description": "assign value to JSON based on query",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "license": "MIT",
+  "keywords": [],
+  "scripts": {
+    "test": "jest",
+    "lint": "gts lint",
+    "clean": "gts clean",
+    "compile": "tsc",
+    "start": "ts-node src/index.ts",
+    "fix": "gts fix",
+    "prepare": "npm.cmd run compile",
+    "pretest": "npm.cmd run compile",
+    "posttest": "npm.cmd run lint"
+  },
+  "devDependencies": {
+    "@types/jest": "^26.0.23",
+    "@types/json-query": "^2.2.0",
+    "@types/node": "^15.12.2",
+    "gts": "^3.1.0",
+    "jest": "^27.0.4",
+    "ts-jest": "^27.0.3",
+    "ts-node": "^10.0.0",
+    "typescript": "^4.3.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/josezone/json-assign-value.git"
+  },
+  "dependencies": {
+    "json-query": "^2.2.2"
+  }
+}
