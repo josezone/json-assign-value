@@ -30,9 +30,22 @@ var data = {
   ]
 }
 
-jsonQuery('people[country=NZ].name', 'John',  {
+jsonAssignValue('people[country=NZ].name', 'John',  {
   data: data
 }) //=> {people[{name: 'John', country: 'NZ'} ... etc
+
+jsonAssignValue('people[country=NZ].name', (value) => `${value} Regan`,  {
+  data: data, cb: true
+}) //=> {people[{name: 'Matt Regan', country: 'NZ'} ... etc
+
+jsonAssignValue('people[country=NZ].name', new Promise(resolve) => resolve("John"),  {
+  data: data, asyncify: true
+}) //=> {people[{name: 'John', country: 'NZ'} ... etc
+
+jsonAssignValue('people[country=NZ].name', (value) => new Promise(resolve) => resolve(`${value} Regan`),  {
+  data: data, cb: true
+}) //=> {people[{name: 'Matt Regan', country: 'NZ'} ... etc
+
 ```
 
 #### Options:
@@ -40,7 +53,7 @@ jsonQuery('people[country=NZ].name', 'John',  {
 - **`data`**  The main object to assign values.
 - **`allowRegexp`** (optional): Enable the `~` operator. Before enabling regexp match to anyone, consider the [user defined regular expression security concerns](http://stackoverflow.com/questions/20928677/user-defined-regular-expression-security-concerns).
 - **`cb`** Boolean, this allows users to set value as a callback function with the matched variable available in the callback.
-- **`asyncify`**Boolean, this allows users to pass promises as the values to be set
+- **`asyncify`** Boolean, this allows users to pass promises as the values to be set
 
 ## Queries
 
