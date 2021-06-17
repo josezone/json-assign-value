@@ -43,7 +43,7 @@ jsonAssignValue('people[country=NZ].name', new Promise(resolve) => resolve("John
 }) //=> {people[{name: 'John', country: 'NZ'} ... etc
 
 jsonAssignValue('people[country=NZ].name', (value) => new Promise(resolve) => resolve(`${value} Regan`),  {
-  data: data, cb: true
+  data: data, cb: true, asyncify: true
 }) //=> {people[{name: 'Matt Regan', country: 'NZ'} ... etc
 
 ```
