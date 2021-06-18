@@ -1,7 +1,7 @@
 {
   "author": "josezone",
   "name": "json-assign-value",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "assign value to JSON based on query",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -9,7 +9,14 @@
     "dist"
   ],
   "license": "MIT",
-  "keywords": [],
+  "keywords": [
+    "JSON",
+    "assign",
+    "set JSON",
+    "assign JSON",
+    "assign value",
+    "assign json value"
+  ],
   "scripts": {
     "test": "jest",
     "lint": "gts lint",
